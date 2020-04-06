@@ -1,0 +1,61 @@
+/* ~~~~~~~~~~~~~~ */
+/* color variables */
+/* ~~~~~~~~~~~~~~ */
+:root {
+  --primaryColor: rgb(68, 68, 68);
+  --secondaryColor: #ffdd67;
+  --tertiaryColor: #535945;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 15rem;
+  background: var(--tertiaryColor);
+}
+
+.content span {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: var(--secondaryColor);
+  animation: animate 2s linear infinite;
+}
+
+.content span:nth-child(1) {
+  top: -2.5rem;
+  left: -2.5rem;
+}
+
+.content span:nth-child(2) {
+  top: -2.5rem;
+  right: -2.5rem;
+}
+
+.content span:nth-child(3) {
+  bottom: -2.5rem;
+  left: calc(50% - 2.5rem);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX();
+  }
+
+  100% {
+    /* transform: ; */
+  }
+}
