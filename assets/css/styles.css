@@ -2,9 +2,10 @@
 /* color variables */
 /* ~~~~~~~~~~~~~~ */
 :root {
-  --primaryColor: rgb(68, 68, 68);
+  --primaryColor: #444444;
   --secondaryColor: #ffdd67;
   --tertiaryColor: #535945;
+  --rainbow: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
 }
 
 * {
@@ -22,40 +23,74 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 15rem;
-  height: 15rem;
-  background: var(--tertiaryColor);
+  width: 7.5rem;
+  height: 7.5rem;
+  /* background: var(--rainbow); */
+  border-radius: .4rem;
 }
 
 .content span {
   position: absolute;
   width: 5rem;
   height: 5rem;
+  border-radius: .4rem;
   background: var(--secondaryColor);
+  top: -2.5rem;
+  left: -2.5rem;
   animation: animate 2s linear infinite;
 }
 
-.content span:nth-child(1) {
-  top: -2.5rem;
-  left: -2.5rem;
-}
-
 .content span:nth-child(2) {
-  top: -2.5rem;
-  right: -2.5rem;
+  animation-delay: .5s;
 }
 
 .content span:nth-child(3) {
-  bottom: -2.5rem;
-  left: calc(50% - 2.5rem);
+  animation-delay: 1s;
 }
 
 @keyframes animate {
   0% {
-    transform: translateX();
+    top: -2.5rem;
+    left: -2.5rem;
+  }
+
+  12.5% {
+    top: -2.5rem;
+    left: calc(100% - 2.5rem);
+  }
+
+  25% {
+    top: -2.5rem;
+    left: calc(100% - 2.5rem);
+  }
+
+  37.5% {
+    top: calc(100% - 2.5rem);
+    left: calc(100% - 2.5rem);
+  }
+
+  50% {
+    top: calc(100% - 2.5rem);
+    left: calc(100% - 2.5rem);
+  }
+
+  62.5% {
+    top: calc(100% - 2.5rem);
+    left: -2.5rem;
+  }
+
+  75% {
+    top: calc(100% - 2.5rem);
+    left: -2.5rem;
+  }
+
+  87.5% {
+    top: -2.5rem;
+    left: -2.5rem;
   }
 
   100% {
-    /* transform: ; */
+    top: -2.5rem;
+    left: -2.5rem;
   }
 }
